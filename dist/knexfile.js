@@ -15,7 +15,7 @@ const config = {
             max: 10,
         },
         migrations: {
-            tableName: 'knex_migrations',
+            directory: './src/migrations',
         },
     },
     staging: {
@@ -30,7 +30,7 @@ const config = {
             max: 10,
         },
         migrations: {
-            tableName: 'knex_migrations',
+            directory: './src/migrations',
         },
     },
     production: {
@@ -45,7 +45,7 @@ const config = {
             max: 10,
         },
         migrations: {
-            tableName: 'knex_migrations',
+            directory: './src/migrations',
         },
     },
 };
