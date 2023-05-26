@@ -1,0 +1,32 @@
+export interface OrderInterface {
+    id: number;
+    completed: boolean;
+    cancelled: boolean;
+    kitchenCancelled: boolean;
+    kitchenAccepted: boolean;
+    kitchenDispatched: boolean;
+    kitchenDispatched_time: string;
+    completedTime: string;
+    riderId: number;
+    kitchenPrepared: boolean;
+    riderAssigned: boolean;
+    paid: boolean;
+    orderCode: number;
+    orderChange: string;
+    calculatedOrderId: number;
+    kitchenVerifiedTime: string;
+    kitchenCompletedTime: string;
+    shopAccepted: boolean;
+    shopPrepared: boolean;
+    noOfMealbagsDelivered: number;
+    noOfDrinksDelivered: number;
+    riderStartedTime: string;
+    riderStarted: boolean;
+    riderArrivedTime: string;
+    riderArrived: boolean;
+    isFailedTrip: boolean;
+    failedTripDetails: any;
+    boxNumber: number;
+    shelfId: number;
+    userId: number;
+}
