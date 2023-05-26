@@ -7,7 +7,7 @@ async function up(knex) {
         table.increments('id');
         table.string('first_name');
         table.string('last_name');
-        table.string('email');
+        table.string('email').unique();
         table.timestamp('created_at').defaultTo(knex.fn.now());
         table.timestamp('updated_at').defaultTo(knex.fn.now());
     });

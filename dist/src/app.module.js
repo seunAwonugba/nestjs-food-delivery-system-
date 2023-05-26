@@ -13,6 +13,7 @@ const app_service_1 = require("./app.service");
 const database_service_1 = require("./database/database.service");
 const database_module_1 = require("./database/database.module");
 const config_1 = require("@nestjs/config");
+const user_module_1 = require("./user/user.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -22,6 +23,7 @@ AppModule = __decorate([
             config_1.ConfigModule.forRoot({
                 isGlobal: true,
             }),
+            user_module_1.UserModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService, database_service_1.DatabaseService],
