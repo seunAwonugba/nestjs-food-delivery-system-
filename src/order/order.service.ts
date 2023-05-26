@@ -11,4 +11,13 @@ export class OrderService {
     const knex = this.databaseService.getKnexInstance();
     return knex('orders').insert(createOrderDto);
   }
+
+  async getOrders(): Promise<OrderModel[]> {
+    const knex = this.databaseService.getKnexInstance();
+    const query = `SELECT * FROM ${OrderModel.tableName}`;
+
+    const result = await knex.raw(query);
+
+    return result.rows;
+  }
 }

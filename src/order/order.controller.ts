@@ -1,7 +1,16 @@
-import { Body, Controller, HttpStatus, Post, Req, Res } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  HttpStatus,
+  Post,
+  Req,
+  Res,
+  Get,
+} from '@nestjs/common';
 import { OrderService } from './order.service';
 import { CreateOrderDto } from './dto/CreateOrderDto';
 import { Request, Response } from 'express';
+import { OrderModel } from 'src/models/OrderModel';
 
 @Controller('order')
 export class OrderController {
@@ -21,5 +30,10 @@ export class OrderController {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  @Get('get-orders')
+  async getOrders(): Promise<OrderModel[]> {
+    return this.orderService.getOrders();
   }
 }

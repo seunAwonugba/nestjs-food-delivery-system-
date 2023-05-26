@@ -32,6 +32,9 @@ let OrderController = class OrderController {
             console.log(error);
         }
     }
+    async getOrders() {
+        return this.orderService.getOrders();
+    }
 };
 __decorate([
     (0, common_1.Post)('/create-order'),
@@ -41,6 +44,12 @@ __decorate([
     __metadata("design:paramtypes", [CreateOrderDto_1.CreateOrderDto, Object]),
     __metadata("design:returntype", Promise)
 ], OrderController.prototype, "createOrder", null);
+__decorate([
+    (0, common_1.Get)('get-orders'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], OrderController.prototype, "getOrders", null);
 OrderController = __decorate([
     (0, common_1.Controller)('order'),
     __metadata("design:paramtypes", [order_service_1.OrderService])

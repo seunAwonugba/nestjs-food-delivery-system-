@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.OrderService = void 0;
 const common_1 = require("@nestjs/common");
 const database_service_1 = require("../database/database.service");
+const OrderModel_1 = require("../models/OrderModel");
 let OrderService = class OrderService {
     constructor(databaseService) {
         this.databaseService = databaseService;
@@ -19,6 +20,12 @@ let OrderService = class OrderService {
     async createOrder(createOrderDto) {
         const knex = this.databaseService.getKnexInstance();
         return knex('orders').insert(createOrderDto);
+    }
+    async getOrders() {
+        const knex = this.databaseService.getKnexInstance();
+        const query = `SELECT * FROM ${OrderModel_1.OrderModel.tableName}`;
+        const result = await knex.raw(query);
+        return result.rows;
     }
 };
 OrderService = __decorate([

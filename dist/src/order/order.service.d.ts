@@ -5,4 +5,5 @@ export declare class OrderService {
     private readonly databaseService;
     constructor(databaseService: DatabaseService);
     createOrder(createOrderDto: CreateOrderDto): Promise<OrderModel>;
+    getOrders(): Promise<OrderModel[]>;
 }
